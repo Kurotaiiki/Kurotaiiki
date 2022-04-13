@@ -1,0 +1,21 @@
+.boton.dos::after{
+    content: "";
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: calc(-100% - 80px);
+    top: 0;
+    transition: .3s ease-in-out all;
+
+    border-right: 80px solid transparent ;
+    border-bottom: 80px solid blue;
+
+
+}
+
+.boton.dos:hover::after{
+
+    left: 0;
+
+
+}
