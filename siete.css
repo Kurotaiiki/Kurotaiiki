@@ -1,0 +1,25 @@
+.boton.siete::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 1;
+    top: -110px;
+    
+    transition: .3s ease-in-out all;
+
+    border: 50px solid green;
+
+
+}
+
+.boton.siete:hover::after{
+
+    left: center;
+    
+    border: 200px solid green;
+
+
+}
