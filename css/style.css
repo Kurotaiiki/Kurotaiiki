@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+
+
+:root{
+
+
+        /* ligth--------------------------- */
+        --color-SideMenu: rgb(4, 155, 215);
+        --color-SideMenu-icons: rgb(18, 110, 130);
+        --color-SideMenu-Selector: rgb(50, 186, 217);
+        --color-Header: rgb(191, 191, 191);
+        --color-Icon-Menu: rgb(217, 217, 217);
+        --color-Body: rgb(217, 217, 217);
+        --color-Body-font: rgb(19, 44, 51);
+    
+
+        /* dark------------------------------ */
+
+        --color-SideMenu-2: rgb(79, 35, 140);
+        --color-SideMenu-icons-2: rgb(13, 1, 38);
+        --color-SideMenu-Selector-2: rgb(139, 137, 217);
+        --color-Header-2: rgb(129, 84, 191);
+        --color-Icon-Menu-2: rgb(13, 1, 38);
+        --color-Body-2: rgb(13, 1, 38);
+        --color-Body-font-2: rgb(129, 84, 191);
+
+
+    /* variables fijas */
+
+
+
+    --SideMenu: black;
+    --SideMenu-icons: red;
+    --SideMenu-Selector: blue;
+    --Header: yellow;
+    --Icon-Menu: white;
+    --Body: gray;
+    --Body-font: #132C33;
+
+
+
+}
+
+/* modificamos valor de variables */
+
+body{
+
+    --SideMenu: var(--color-SideMenu);
+    --SideMenu-icons: var(--color-SideMenu-icons);
+    --SideMenu-Selector: var(--color-SideMenu-Selector);
+    --Header: var(--color-Header);
+    --Icon-Menu: var(--color-Icon-Menu);
+    --Body: var(--color-Body);
+    --Body-font: var(--color-Body-font);
+}
+
+
+body.dark{
+
+    --SideMenu: var(--color-SideMenu-2);
+    --SideMenu-icons: var(--color-SideMenu-icons-2);
+    --SideMenu-Selector: var(--color-SideMenu-Selector-2);
+    --Header: var(--color-Header-2);
+    --Icon-Menu: var(--color-Icon-Menu-2);
+    --Body: var(--color-Body-2);
+    --Body-font: var(--color-Body-font-2);
+    
+}
+
+
+
+
+
+
+
+/* ------------------------------------------Modificadores por etiqueta---------------------------------------- */
+*{
+    margin: 0;
+    pad: 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family: 'Open Sans';
+}
+/* cuerpo de toda la pagina (contenedor principal) */
+body{
+
+    
+    background-color: var(--body);
+    margin-left: 80px;
+    margin-top: 80px;
+    transition:  .3s ease;
+    cursor: default;
+    color: var(--font-body);                               /*color del fondo*/   
+
+}
+/* contenido pagina */
+main{
+    padding: 20px;
+
+    
+}
+
+
+/* barra superior */
+header{
+    width: 100%;
+    height: 80px;                          /* color barra superior*/
+    transition: all .3s ease;
+    display:flex;
+    align-items: baseline;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+/* flecha */
+a svg{
+    opacity: 0;
+    transform: scale(150%);
+    position: absolute;
+    left:-30px;
+    transition: .5s ease-out all;
+}
+
+p{
+    
+    font-size: 40px;
+}
+h1{
+    font-size: 60px;
+}
+h2{
+    font-size: 55px;
+}
+
+main div.Contacto h1{
+    font-size: 30px;
+}
+main div.Contacto h2{
+    font-size: 20px;
+}
+
+main div.Contacto h2{
+    font-size: 20px;
+}
+main div.Contacto h1 a{
+    color: var(--Body-font);
+}
+main div.Contacto h1 a:hover{
+    cursor: pointer;
+    
+}
+
+
+
+
+
+/* --------------------------------------------------modificadores por clase------------------------------------ */
+
+/* -----------------MENU LATERAL */
+.icon__menu{
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    transform: translateX(10px); 
+    color: var(--Icon-Menu)  ;              
+    transition: all .5s ease;
+    
+}
+
+.icon__menu i{
+    font-size: 22px;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.menu__side{
+
+    width: 80px;
+    height: 100%;              
+    position: fixed;
+    top:0;
+    left:0;
+    font-size: 18px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 20px solid var(--SideMenu);  /*complemento de color barra lateral*/
+    transition: all 3s ease;
+    transition: border-right 5s ease-in-out;
+    
+}
+
+/*ocultar scroll para chrome,safari y opera*/
+.menu__side::-webkit-scrollbar{
+    display: none;
+}
+
+/*ocultar scroll firefox   */
+.menu__side{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+/* --------------------------------Icono principal */
+
+.name__page{ /*orden titulo menu lateral*/
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;   
+}
+
+.name__page i{  /*separacion icono*/
+    width: 20px;
+    margin-right: 20px;
+}
+
+/* --------------------------------Items Menu */
+
+.options__menu{  /*oganizar opciones de la barra lateral*/
+    padding: 20px 30px;
+    position: absolute;
+    top: 80px;    
+}
+
+.options__menu a{ /*encasillar cada opcion del menu*/
+    
+    cursor: default;
+    display: block;
+    position: relative;
+    transition:  color .3s;
+
+}
+
+
+
+.options__menu .option{ /*formateamos texto e imagen del */
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 400;
+
+}
+
+
+
+
+.options__menu .option i{  /*separando letrass del icono y dando color*/
+
+    width: 20px;
+    margin-right: 20px;
+    cursor: pointer;                    
+    transition: color .3s ease all;
+}
+
+.options__menu .option  h4{
+    font-weight: 900;    
+    cursor: pointer;      /*         color texto barra lateral*/
+}
+
+
+
+/* ---------------------Modificadores de opcion seleccionada */
+
+.selected::before{
+
+    content: '';
+    width: 60px;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: -30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+
+/* --------------------modificadores de opciones sin seleccionar */
+
+.unselected::after{
+    cursor: pointer;
+    content:'';
+    width: 230px;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: -300px;
+    z-index: 300;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: .3s ease all;
+ 
+
+}
+
+.unselected:hover::after{
+
+    left:-30px ;
+
+}
+
+.unselected div{
+
+    left: 0;
+    transition: .3s ease all;
+}
+
+.unselected:hover svg{
+
+    opacity: 1;
+    left: 200px;
+
+}
+
+.unselected:hover div{
+
+    left: -25px;
+
+
+}
+
+
+
+/* --------------------------------------Temas ---------------------------------------------------- */
+
+.menu__side{
+    background-color:var(--SideMenu) ;
+    transition: all .3s ease;
+
+}
+.name__page{
+    color: var(--SideMenu-icons);
+    transition: all .3s ease;
+
+}
+.option {
+    color: var(--SideMenu-icons);
+    transition: all .3s ease;
+
+}
+.icon__menu{
+
+    color: var(--Icon-Menu);
+    transition: all .3s ease;
+
+
+}
+
+
+
+header{
+
+    background-color: var(--Header);
+    transition: all .3s ease;
+
+}
+body{
+    background-color: var(--Body);
+    color: var(--Body-font);
+}
+
+
+
+.unselected::after{
+
+    background-color: var(--SideMenu-Selector);
+    transition: all .3s ease;
+}
+
+a.off:hover i{
+    
+    color: var(--SideMenu-Selector);
+}
+
+.selected::before{
+
+    background-color: var(--SideMenu-Selector);
+    transition: all .3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------ Clases para javascript------------------------------------------------------------ */
+
+.body_move{
+    margin-left: 250px;
+}
+
+.menu_side_move{
+
+    
+    width: 250px;
+}
+
+.selected.selector_move::before{
+
+    width: 230px;
+
+
+}
+
+.opacity{
+
+    opacity: 0;
+
+}
+
+
+
+
+/* -----------------------------creamos una funcion para cuando la  pantalla sea menor a 760px =========================*/
+
+@media screen and (max-width:710px){
+
+    .body_move{
+        margin-left: 0px;
+
+    }
+
+    .menu_side_move{
+        width: 80px;
+        left: -80px;
+    }
+
+
+
+    
+}
